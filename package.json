@@ -1,0 +1,18 @@
+{
+  "name": "socket-chat",
+  "version": "1.0.0",
+  "description": "websocket chat examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "websocket",
+    "chat"
+  ],
+  "author": "Milen Radkov <milenradkov@me.com> (http://mradkov.com)",
+  "license": "MIT",
+  "dependencies": {
+    "net": "^1.0.2"
+  }
+}
