@@ -1,12 +1,16 @@
 var topology = require('fully-connected-topology')
 var jsonStream = require('duplex-json-stream')
 var streamSet = require('stream-set')
+var register = require('register-multicast-dns')
+var toPort = require('hash-to-port')
 
 var me = process.argv[2]
 var peers = process.argv.slice(3)
 
-var swarm = topology(me, peers)
+var swarm = topology(toAddress(me), peers.map(toAddress))
 var streams = streamSet() 
+
+register(me)
 
 swarm.on('connection', function (peer) {
         console.log('[a peer joined]')
@@ -25,3 +29,7 @@ process.stdin.on('data', function(data) {
                 })
         })
 })
+
+function toAddress (name) {
+        return name + '.local:' + toPort(name)
+}
