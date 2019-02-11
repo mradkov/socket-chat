@@ -13,6 +13,7 @@
   "author": "Milen Radkov <milenradkov@me.com> (http://mradkov.com)",
   "license": "MIT",
   "dependencies": {
-    "net": "^1.0.2"
+    "net": "^1.0.2",
+    "stream-set": "^1.1.0"
   }
 }
